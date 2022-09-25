@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let temp = [26,23,45,34,23,38,39,37,18,19,20,21];
+        let min = temp[0];
+        let max = temp[0];
+        let avg = 0;
+        let thresh = 26;
+
+        for(let i = 0; i < temp.length; i++) {
+            
+            avg += temp[i];
+
+            if (temp[i+1] < min) {
+                min = temp[i+1];
+            }
+
+            if (temp[i+1] > max) {
+                max = temp[i+1];
+            }
+        }
+
+        avg = avg / temp.length;
+
+        console.log("Minimum Temperature Is : ",min);
+        console.log("Maximum Temperature Is : ",max);
+        console.log("Average Temperature Is : ",avg);
+    
+        console.log("<<<<< Threshold is set to be 26 >>>>> ");
+
+        console.log("Temperatures Greater than Threshold: ");
+        for(let i = 0; i < temp.length; i++) {
+            
+            if (temp[i] > thresh) {
+                console.log("This Temperature is Greater Than ThreshHold : ",temp[i]);
+            }
+
+        }
+
+        console.log("Temperatures Less than Threshold: ");
+        for(let i = 0; i < temp.length; i++) {
+         
+            if (temp[i] < thresh) {
+                console.log("This Temperature is Less Than ThreshHold : ",temp[i]);
+            }
+
+        }
+    </script>
+</body>
+</html>
