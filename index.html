@@ -7,13 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+
     <script>
-        let temp = [26,23,45,34,23,38,39,37,18,19,20,21];
+        let temp = [26,27,45,34,23,38,39,37,18,19,20,21,26,24,23,28,29,35,24,25,38,37,36,35];
         let min = temp[0];
         let max = temp[0];
         let avg = 0;
+        let total = 0;
         let thresh = 26;
+        let thmin = 0;
+        let thmax = 0;
 
         for(let i = 0; i < temp.length; i++) {
             
@@ -27,7 +30,6 @@
                 max = temp[i+1];
             }
         }
-
         avg = avg / temp.length;
 
         console.log("Minimum Temperature Is : ",min);
@@ -37,10 +39,12 @@
         console.log("<<<<< Threshold is set to be 26 >>>>> ");
 
         console.log("Temperatures Greater than Threshold: ");
+        
         for(let i = 0; i < temp.length; i++) {
             
             if (temp[i] > thresh) {
                 console.log("This Temperature is Greater Than ThreshHold : ",temp[i]);
+                thmax++;
             }
 
         }
@@ -50,9 +54,15 @@
          
             if (temp[i] < thresh) {
                 console.log("This Temperature is Less Than ThreshHold : ",temp[i]);
+                thmin++;
             }
 
         }
+
+        total = (thmin / 24) * 100; 
+        console.log("Minimum Threshhold Percentage: ",total);
+        total = (thmax / 24) * 100; 
+        console.log("Maximum Threshhold Percentage: ",total);
     </script>
 </body>
 </html>
